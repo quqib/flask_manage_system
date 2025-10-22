@@ -1,9 +1,10 @@
 from flask import Flask
-from database.routers.course_routers import bp  # 导入蓝图
-from database.extensions import db
+from app import createApp
+from app.routers.course_routers import bp# 导入蓝图
+from app.extensions import db
 
 app = Flask(__name__)
-
+createApp(app)
 # 注册蓝图！这是关键一步
 app.register_blueprint(bp)
 
